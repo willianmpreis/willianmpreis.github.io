@@ -24,17 +24,15 @@ class MyController
         this.ajax(`${this.baseUrl}${this.baseUser}`).then(response => {
             this.profilePicture = response.avatar_url;
             if (this.avatar) {
-                this.avatar.style = `background-image: url(${this.profilePicture};)`;
-                console.log(this.avatar);
+                this.avatar.style = `background-image: url(${this.profilePicture};)`;                
             }
             if (this.title) {
-                this.title.innerHTML = response.bio;
+                this.title.innerHTML = 'Willian M. P. Reis';//response.bio;
             }
             if (this.age) {
                 let age = this.calcAge(this.birth);
                 this.age.innerHTML = `${age} anos`;
-            }    
-            console.log(response);
+            }
         }).catch(err => {
             console.log(err);
         });
