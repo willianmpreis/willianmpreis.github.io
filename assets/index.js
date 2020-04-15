@@ -1,0 +1,1 @@
+window.myController = new MyController();
